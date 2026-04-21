@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FirePatrolAgent</title>
+    <style>
+        :root {
+            --bg-start: #fff8ef;
+            --bg-end: #fde8d8;
+            --panel: rgba(255, 255, 255, 0.92);
+            --text: #1f2937;
+            --muted: #5b6472;
+            --accent: #c2410c;
+            --accent-soft: #fb923c;
+            --border: rgba(194, 65, 12, 0.16);
+            --shadow: 0 24px 60px rgba(120, 53, 15, 0.14);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+            color: var(--text);
+            background:
+                radial-gradient(circle at top right, rgba(251, 146, 60, 0.22), transparent 26%),
+                radial-gradient(circle at bottom left, rgba(194, 65, 12, 0.14), transparent 28%),
+                linear-gradient(180deg, var(--bg-start), var(--bg-end));
+        }
+
+        .page {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 56px 20px 72px;
+        }
+
+        .hero {
+            margin-bottom: 28px;
+            text-align: center;
+        }
+
+        .tag {
+            display: inline-block;
+            margin-bottom: 16px;
+            padding: 8px 14px;
+            border-radius: 999px;
+            background: rgba(194, 65, 12, 0.1);
+            color: var(--accent);
+            font-size: 0.92rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: clamp(2.3rem, 5vw, 4rem);
+            line-height: 1.05;
+        }
+
+        .subtitle {
+            max-width: 900px;
+            margin: 20px auto 0;
+            font-size: 1.05rem;
+            line-height: 1.85;
+            color: var(--muted);
+            text-align: left;
+        }
+
+        .panel {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+            padding: 26px;
+            backdrop-filter: blur(10px);
+        }
+
+        .panel-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 18px;
+            flex-wrap: wrap;
+        }
+
+        .panel-head h2 {
+            margin: 0;
+            font-size: 1.35rem;
+        }
+
+        .meta {
+            color: var(--accent);
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        video {
+            width: 100%;
+            display: block;
+            border-radius: 18px;
+            background: #000;
+        }
+
+        .note {
+            margin-top: 18px;
+            color: var(--muted);
+            font-size: 0.96rem;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 640px) {
+            .page {
+                padding: 36px 16px 48px;
+            }
+
+            .panel {
+                padding: 16px;
+                border-radius: 18px;
+            }
+
+            .subtitle {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="page">
+        <section class="hero">
+            <div class="tag">Video Demonstration</div>
+            <h1>FirePatrolAgent</h1>
+            <p class="subtitle">
+                When real-time surveillance images are transmitted to the agent, FirePatrolAgent automatically
+                invokes HLRA-YOLOv9 for initial fire detection. If fire targets are identified, and subject to
+                user authorization, the agent subsequently calls HLRA-EfficientNetV2-S to perform batch
+                secondary verification on the suspected fire regions. After successful secondary verification,
+                FirePatrolAgent automatically conducts scene analysis based on the detection results. It then
+                utilizes a RAG framework that integrates online search, a local text knowledge base, and a
+                knowledge graph to generate tailored response suggestions for both on-site personnel and
+                management staff.
+            </p>
+        </section>
+
+        <section class="panel">
+            <div class="panel-head">
+                <h2>Demonstration Video</h2>
+                <div class="meta">MP4 Playback</div>
+            </div>
+            <video controls preload="metadata">
+                <source src="Demonstration%20of%20Agent.mp4" type="video/mp4">
+                Your browser does not support HTML5 video.
+            </video>
+        </section>
+    </main>
+</body>
+</html>
