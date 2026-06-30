@@ -136,8 +136,8 @@
             <h1>FirePatrolAgent</h1>
             <p class="subtitle">
                 When real-time surveillance images are transmitted to the agent, FirePatrolAgent automatically
-                invokes HLRA-YOLOv9 for initial fire detection. If fire targets are identified, and subject to
-                user authorization, the agent subsequently calls HLRA-EfficientNetV2-S to perform batch
+                invokes RobustFireDet for initial fire detection. If fire targets are identified, and subject to
+                user authorization, the agent subsequently calls RobustFireNet to perform batch
                 secondary verification on the suspected fire regions. After successful secondary verification,
                 FirePatrolAgent automatically conducts scene analysis based on the detection results. It then
                 utilizes a RAG framework that integrates online search, a local text knowledge base, and a
